@@ -23,10 +23,6 @@ AuctionSchema = new SimpleSchema({
   bids: {
     type: [Bid],
     optional: true
-  },
-  maxBid: {
-    type: Number,
-    optional: true
   }
 });
 
