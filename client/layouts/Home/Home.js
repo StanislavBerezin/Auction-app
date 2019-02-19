@@ -8,7 +8,7 @@ Template.HomeLayout.onCreated(function bodyOnCreated() {
 });
 
 Template.HomeLayout.helpers({
-  tasks() {
+  items() {
     return Auction.find({});
   }
 });

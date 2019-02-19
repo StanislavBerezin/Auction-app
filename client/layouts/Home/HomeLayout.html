@@ -8,8 +8,8 @@
       <h2>List of items</h2>
       {{> Template.dynamic template=main}}
       <ul>
-        {{#each tasks}}
-        {{> task}}
+        {{#each items}}
+        {{> item}}
         {{/each}}
       </ul>
 
@@ -21,7 +21,7 @@
   </main>
 </template>
 
-<template name="task">
+<template name="item">
   <li>
     <a href="{{pathFor 'individual.item' _id=_id}}" title="{{ title }}">
       {{ title }}</a
