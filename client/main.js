@@ -1,1 +1,1 @@
-require("../lib/routes");
+require("./routes/index");

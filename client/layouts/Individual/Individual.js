@@ -20,7 +20,7 @@ Template.IndividualLayout.helpers({
     let maxBid = [];
 
     try {
-      //going through the collection
+      //going through the collection received upon find Auction.find
       result.map(eachBidObject => {
         result.title = `Auction began for ${eachBidObject.title}`;
 

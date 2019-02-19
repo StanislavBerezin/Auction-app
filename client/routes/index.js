@@ -1,4 +1,4 @@
-require("../client/layouts/import");
+require("../layouts/import");
 
 FlowRouter.route("/", {
   name: "home",
