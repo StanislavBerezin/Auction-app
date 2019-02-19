@@ -1,5 +1,6 @@
 import { Meteor } from "meteor/meteor";
 import { Auction } from "../imports/api/Auction";
+
 Meteor.startup(() => {
   Meteor.publish("auctions", function auctionPublication() {
     //can can access Auction.find in component that is subscribed to it

@@ -21,9 +21,20 @@ Template.HomeLayout.events({
     // Get value from form element
     const target = event.target;
     const title = target.text.value;
-    console.log(title);
 
-    Meteor.call("auction.insert", title);
+    const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+
+    let isValid = false;
+
+    isValid = format.test(title);
+
+    console.log(isValid);
+    if (!isValid) {
+      Meteor.call("auction.insert", title);
+    } else {
+      alert("No weird symbols");
+    }
+    console.log(title);
 
     target.text.value = "";
   }
