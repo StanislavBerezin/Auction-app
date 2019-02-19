@@ -1,0 +1,30 @@
+<template name="HomeLayout">
+  <header>
+    {{>Header}}
+    <h1>Action list</h1>
+  </header>
+  <main>
+    <div>
+      <h2>List of item</h2>
+      {{> Template.dynamic template=main}}
+      <ul>
+        {{#each tasks}}
+        {{> task}}
+        {{/each}}
+      </ul>
+
+      <form class="new-auction">
+        <input type="text" name="text" placeholder="Your item" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </main>
+</template>
+
+<template name="task">
+  <li>
+    <a href="{{pathFor 'individual.item' _id=_id}}" title="{{ title }}">
+      {{ title }}</a
+    >
+  </li>
+</template>

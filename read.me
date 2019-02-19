@@ -1,0 +1,15 @@
+The home page needs to have a list of auctions and a button to create a new auction
+
+1)The list of auctions needs to be retrieved using a "subscription"
+
+2)Clicking the "create auction" button creates an "auction" document
+ in Mongo that has a "title" field, 
+and a "bids" field that needs to be an array of objects
+Each bid object simply needs to contain the bid amount and a timestamp
+Placing a bid needs to be done via a Meteor method call
+
+
+On the home page, clicking an auction from the list opens a new page
+The auction page contains the current highest bid, an input box to 
+a bid and a button to place the bid.
+The current highest bid needs to be retrieved using a "subscription"
