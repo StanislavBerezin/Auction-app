@@ -13,21 +13,50 @@ Template.IndividualLayout.helpers({
   bids() {
     let id = FlowRouter.getParam("_id");
 
+    let result = Auction.find({ _id: id });
+
     let maxBid = [];
 
-    let result = Auction.findOne({ _id: id });
+    console.log(result.collection);
 
-    if (result.bids === undefined) {
-      result.maxBid = "The item has not been traded yet";
-    } else {
-      result.bids.map(each => {
-        maxBid.push(each.bid);
+    try {
+      result.map(eachBidObject => {
+        result.title = `Auction began for ${eachBidObject.title}`;
+
+        if (!eachBidObject.bids) throw Error;
+
+        eachBidObject.bids.map(eachRating => {
+          console.log(eachRating.bid);
+          maxBid.push(eachRating.bid);
+        });
       });
+
       maxBid = Math.max.apply(Math, maxBid);
       result.maxBid = `Highest bid is $${maxBid} `;
+    } catch (e) {
+      result.map(eachBidObject => {
+        result.title = `Auction hasn't started: ${eachBidObject.title}`;
+      });
+      result.maxBid = "Item has no bids";
     }
 
     return result;
+
+    // let maxBid = [];
+
+    // let result = Auction.findOne({ _id: id });
+
+    // if (result.bids === undefined) {
+    //   result.maxBid = "The item has not been traded yet";
+    // } else {
+    //   result.bids.map(each => {
+    //     maxBid.push(each.bid);
+    //   });
+    //   maxBid = Math.max.apply(Math, maxBid);
+    //   result.maxBid = `Highest bid is $${maxBid} `;
+    // }
+
+    // return result;
   }
 });
 

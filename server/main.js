@@ -7,6 +7,6 @@ Meteor.startup(() => {
   });
 
   Meteor.publish("bids", function auctionPublication(id) {
-    return Auction.findOne({ _id: id });
+    return Auction.find({ _id: id });
   });
 });
