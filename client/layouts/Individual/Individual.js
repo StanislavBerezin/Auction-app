@@ -17,6 +17,7 @@ Template.IndividualLayout.helpers({
     // using find because it returns collection, tried findOne but is giving errors on the back-end
     //for not being a cursor
     let result = Auction.find({ _id: id });
+
     let maxBid = [];
 
     try {
