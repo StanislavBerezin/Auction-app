@@ -40,7 +40,7 @@ Template.IndividualLayout.helpers({
       // in case there was an error, then it means there are no bids
       //so change the titles
       result.map(eachBidObject => {
-        result.title = `Auction hasn't started: ${eachBidObject.title}`;
+        result.title = `Be the first to bid on: ${eachBidObject.title}`;
       });
       result.maxBid = "Item has no bids";
     }

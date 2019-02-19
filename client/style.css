@@ -76,8 +76,14 @@ input:focus {
   background: #1e90ff;
 }
 
-.item {
+.item,
+.displayAll {
   background: #ffffff;
   border-radius: 20px;
   padding: 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.displayAll {
 }
